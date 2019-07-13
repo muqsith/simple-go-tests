@@ -1,7 +1,17 @@
-Go programs start from a file that has 
+Go programs start from a file that has
 
 package main
 
 and
 
 func main() {}
+
+Compilation:
+
+1. Below is the example to compile particular program and keep it in bin/
+
+    $ go build -o bin/hello src/basics/hello/hello.go
+
+2. To build for a target platform (build for linux from Mac)
+
+    $ env GOOS=linux GOARCH=arm go build -o bin/hello src/basics/hello/hello.go
