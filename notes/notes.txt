@@ -1,0 +1,7 @@
+Go programs start from a file that has 
+
+package main
+
+and
+
+func main() {}
