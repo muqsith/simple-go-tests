@@ -4,6 +4,7 @@ package main
 
 import (
 	"fmt"
+	"time"
 
 	"golang.org/x/tour/tree"
 )
@@ -15,6 +16,7 @@ type RecordKeeper struct {
 func Walk(t *tree.Tree, c chan int, rk RecordKeeper) {
 	c <- t.Value
 	rk.r -= 1
+	time.Sleep(time.Millisecond * 300)
 	if t.Left != nil {
 		rk.r += 1
 		go Walk(t.Left, c, rk)
