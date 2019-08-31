@@ -9,20 +9,22 @@ import (
 	"golang.org/x/tour/tree"
 )
 
+/*RecordKeeper blah blah*/
 type RecordKeeper struct {
 	r int
 }
 
+/*Walk blah blah*/
 func Walk(t *tree.Tree, c chan int, rk RecordKeeper) {
 	c <- t.Value
-	rk.r -= 1
+	rk.r--
 	time.Sleep(time.Millisecond * 300)
 	if t.Left != nil {
-		rk.r += 1
+		rk.r++
 		go Walk(t.Left, c, rk)
 	}
 	if t.Right != nil {
-		rk.r += 1
+		rk.r++
 		go Walk(t.Right, c, rk)
 	}
 	if rk.r == 0 {
@@ -30,6 +32,7 @@ func Walk(t *tree.Tree, c chan int, rk RecordKeeper) {
 	}
 }
 
+/*Same blah blah*/
 func Same(t1, t2 *tree.Tree) bool {
 	isSame := true
 	c1, c2 := make(chan int), make(chan int)
@@ -48,20 +51,20 @@ func Same(t1, t2 *tree.Tree) bool {
 		ar2 = append(ar2, i)
 	}
 
-	ar1_val, ar2_val := 0, 0
-	val_found := false
+	ar1Val, ar2Val := 0, 0
+	valFound := false
 
-	for i := 0; i < len(ar1); i += 1 {
-		ar1_val = ar1[i]
-		val_found = false
-		for j := 0; j < len(ar2); j += 1 {
-			ar2_val = ar2[j]
-			if ar2_val == ar1_val && !val_found {
-				val_found = true
+	for i := 0; i < len(ar1); i++ {
+		ar1Val = ar1[i]
+		valFound = false
+		for j := 0; j < len(ar2); j++ {
+			ar2Val = ar2[j]
+			if ar2Val == ar1Val && !valFound {
+				valFound = true
 				break
 			}
 		}
-		isSame = isSame && val_found
+		isSame = isSame && valFound
 	}
 
 	return isSame

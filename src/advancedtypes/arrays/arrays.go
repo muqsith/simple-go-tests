@@ -43,6 +43,16 @@ func main() {
 	r := q[:]
 	fmt.Println(r)
 
+	const Enone int = 1
+	const Eio = 2
+	const Einval = 4
+
+	alienArray := [...]string{Enone: "no error", Eio: "Eio", Einval: "invalid argument"}
+
+	for key, val := range alienArray {
+		fmt.Println(key, val)
+	}
+
 	alterSlices()
 	nilTest()
 	makeTest()
@@ -51,7 +61,7 @@ func main() {
 }
 
 func alterSlices() {
-	fmt.Println("\n\nalter slices test\n")
+	fmt.Printf("\n\nalter slices test\n")
 	s := []int{2, 3, 5, 7, 11, 13}
 	printSlice("s", s)
 
@@ -71,7 +81,7 @@ func printSlice(text string, s []int) {
 }
 
 func nilTest() {
-	fmt.Println("\n\nnil test\n")
+	fmt.Printf("\n\nnil test\n")
 	var s []int
 	fmt.Printf("len of s is %d, cap of s is %d\n", len(s), cap(s))
 	if s == nil {
@@ -80,7 +90,7 @@ func nilTest() {
 }
 
 func makeTest() {
-	fmt.Println("\n\nmake test\n")
+	fmt.Printf("\n\nmake test\n")
 	s := make([]int, 0, 5)
 	printSlice("s", s)
 
@@ -93,7 +103,7 @@ func makeTest() {
 
 // array of arrays
 func slicesOfSlices() {
-	fmt.Println("\n\nslices of slices test\n")
+	fmt.Printf("\n\nslices of slices test\n")
 	board := [][]string{
 		[]string{"_", "_", "_"},
 		[]string{"_", "_", "_"},
@@ -107,14 +117,14 @@ func slicesOfSlices() {
 	board[1][0] = "O"
 	board[0][2] = "X"
 
-	for i := 0; i < len(board); i += 1 {
+	for i := 0; i < len(board); i++ {
 		fmt.Printf("%s\n", strings.Join(board[i], " "))
 	}
 
 }
 
 func appendSlices() {
-	fmt.Println("\n\nappend slices test\n")
+	fmt.Printf("\n\nappend slices test\n")
 
 	var s []int
 	printSlice("s", s)

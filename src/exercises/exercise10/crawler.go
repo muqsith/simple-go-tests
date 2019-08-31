@@ -4,6 +4,7 @@ import (
 	"fmt"
 )
 
+/*Fetcher is not Fletcher*/
 type Fetcher interface {
 	Fetch(url string) (body string, urls []string, err error)
 }
