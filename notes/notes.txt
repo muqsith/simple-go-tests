@@ -6,6 +6,9 @@ and
 
 func main() {}
 
+#  create bin directory under this project directory
+    $ mkdir bin
+
 Compilation:
 
 1. Below is the example to compile particular program and keep it in bin/
@@ -15,3 +18,6 @@ Compilation:
 2. To build for a target platform (build for linux from Mac)
 
     $ env GOOS=linux GOARCH=arm go build -o bin/hello src/basics/hello/hello.go
+
+3. To execute the compiled binary and see output
+    $ ./bin/hello

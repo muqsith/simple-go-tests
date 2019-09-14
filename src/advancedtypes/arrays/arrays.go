@@ -58,6 +58,7 @@ func main() {
 	makeTest()
 	slicesOfSlices()
 	appendSlices()
+	copySlices()
 }
 
 func alterSlices() {
@@ -139,4 +140,20 @@ func appendSlices() {
 	printSlice("s", s)
 
 	fmt.Println(s)
+}
+
+func copySlices() {
+	fmt.Printf("\n\ncopy slices test\n")
+
+	s1 := []int{0, 2, 4, 6, 8, 10}
+	s2 := []int{1, 3, 5, 7, 9, 11}
+
+	s := make([]int, len(s1)+len(s2))
+
+	copy(s, s1)
+	copy(s[len(s1):], s2)
+
+	for _, i := range s {
+		fmt.Printf("%d\n", i)
+	}
 }
