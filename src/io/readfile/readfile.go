@@ -25,12 +25,12 @@ func main() {
 	fmt.Printf("Destination file: \n%s\n", DSTPATH)
 	defer dst.Close()
 
-	buf := make([]byte, 1024*1000)
+	buf := make([]byte, 1024*10000)
 
-	n, err := src.Read(buf)
+	nread, err := src.Read(buf)
 
-	for err == nil && n > 0 {
-		dst.Write(buf)
-		n, err = src.Read(buf)
+	for err == nil && nread > 0 {
+		dst.Write(buf[0:nread])
+		nread, err = src.Read(buf)
 	}
 }
