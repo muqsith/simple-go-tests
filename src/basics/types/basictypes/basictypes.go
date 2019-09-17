@@ -6,14 +6,14 @@ import (
 )
 
 var (
-	ToBe   bool   = true
-	MaxInt uint64 = 1<<64 - 1
+	toBe   bool   = true
+	maxInt uint64 = 1<<64 - 1
 	z             = cmplx.Sqrt(-5 + 12i)
 )
 
 func main() {
-	fmt.Printf("Type %T, Value: %v\n", ToBe, ToBe)
-	fmt.Printf("Type %T, Value: %v\n", MaxInt, MaxInt)
+	fmt.Printf("Type %T, Value: %v\n", toBe, toBe)
+	fmt.Printf("Type %T, Value: %v\n", maxInt, maxInt)
 	fmt.Printf("Type %T, Value: %v\n", z, z)
 
 	// default values
@@ -22,4 +22,10 @@ func main() {
 	var b bool
 	var s string
 	fmt.Printf("i = %v, f = %v, b = %v, s = %q\n", i, f, b, s)
+
+	s1 := "hello"
+	s2 := "world"
+	s3 := s1 + ", " + s2
+
+	fmt.Println(s3)
 }
