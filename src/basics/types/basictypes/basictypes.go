@@ -28,4 +28,8 @@ func main() {
 	s3 := s1 + ", " + s2
 
 	fmt.Println(s3)
+
+	s4 := "hello worl\n"
+	fmt.Printf("%q", s4)
+	fmt.Println()
 }
