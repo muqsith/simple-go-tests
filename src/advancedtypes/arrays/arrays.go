@@ -59,6 +59,9 @@ func main() {
 	slicesOfSlices()
 	appendSlices()
 	copySlices()
+
+	var test []interface{}
+	fmt.Println("test len: ", len(test))
 }
 
 func alterSlices() {

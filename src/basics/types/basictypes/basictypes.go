@@ -32,4 +32,9 @@ func main() {
 	s4 := "hello worl\n"
 	fmt.Printf("%q", s4)
 	fmt.Println()
+	// string equality
+
+	n1 := "muqsith"
+	n2 := "muqsith"
+	fmt.Println("string equality: ", n1 == n2)
 }
