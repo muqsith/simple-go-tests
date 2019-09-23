@@ -2,7 +2,9 @@ package main
 
 import (
 	"fmt"
+	"log"
 	"math/cmplx"
+	"strconv"
 )
 
 var (
@@ -37,4 +39,14 @@ func main() {
 	n1 := "muqsith"
 	n2 := "muqsith"
 	fmt.Println("string equality: ", n1 == n2)
+
+	sf1 := "420.567"
+
+	f1, err := strconv.ParseFloat(sf1, 64)
+	if err != nil {
+		log.Fatal(err)
+	}
+	fs1 := strconv.FormatFloat(f1, 'f', 2, 64)
+
+	fmt.Println(fs1)
 }
