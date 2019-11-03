@@ -24,7 +24,9 @@ func main() {
 		panic(err)
 	}
 
-	cottonShirts := Inventory{"cotton", 45}
+	cottonShirts := make(map[string]interface{})
+	cottonShirts["Material"] = "cotton"
+	cottonShirts["Count"] = 46
 	tmpl2, err := template.New("cotton").Parse(`We have {{.Count}} {{.Material}} shirts`)
 	var b strings.Builder
 	err = tmpl2.Execute(&b, cottonShirts)
