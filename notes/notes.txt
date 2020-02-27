@@ -21,3 +21,8 @@ Compilation:
 
 3. To execute the compiled binary and see output
     $ ./bin/hello
+
+4. If you happen to put your code in main package but splitted in multiple files then do as Below
+    $ go build -o bin/links src/basics/linking/*.go
+
+    See src/basics/linking for more details
