@@ -5,6 +5,7 @@ import (
 	"math"
 )
 
+/*Circle is just a circle*/
 type Circle struct {
 	radius float64
 	area   float64
@@ -39,4 +40,10 @@ func main() {
 	fmt.Println(pc1.area)
 
 	fmt.Println(pc1 == pc2)
+
+	var pa *int
+
+	pa = &j
+
+	fmt.Println("adress pa referring to: ", pa)
 }

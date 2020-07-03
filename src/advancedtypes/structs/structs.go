@@ -2,6 +2,7 @@ package main
 
 import "fmt"
 
+/*Vertex is just a vertex*/
 type Vertex struct {
 	X int
 	Y int
@@ -33,9 +34,23 @@ func c() {
 	fmt.Println(v1, v2, v3, p)
 }
 
+func d() {
+	va := Vertex{1, 2}
+	vb := va
+
+	fmt.Println("va.X: ", va.X)
+	fmt.Println("vb.X: ", vb.X)
+
+	vb.X = 20
+
+	fmt.Println("va.X: ", va.X)
+	fmt.Println("vb.X: ", vb.X)
+}
+
 func main() {
 	fmt.Println(Vertex{2, 3})
 	a()
 	b()
 	c()
+	d()
 }
