@@ -24,12 +24,16 @@ func main() {
 	mapLiteralsTest()
 	mutatingMaps()
 
+	// maps DO NOT copy when assigned, maps are always references
+	// see https://dave.cheney.net/2017/04/30/if-a-map-isnt-a-reference-variable-what-is-it
 	place := make(map[string]string)
+	placeCopy := place
 
 	place["name"] = "Paris"
 	updateMap(place, "country", "France")
 
 	fmt.Println(place)
+	fmt.Println(placeCopy)
 
 	var place2 = map[string]string{
 		"name": "Berlin",

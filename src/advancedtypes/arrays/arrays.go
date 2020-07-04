@@ -6,6 +6,20 @@ import (
 )
 
 func main() {
+
+	// slices copy when assigned
+
+	s1 := [5]int{2, 4, 5}
+	s2 := s1
+
+	fmt.Println(s1[0:5])
+	fmt.Println(s2[0:5])
+
+	s2[4] = 100
+
+	fmt.Println(s1[0:5])
+	fmt.Println(s2[0:5])
+
 	var a [2]string
 	a[0] = "muqsith"
 	fmt.Println(a[0])
@@ -109,9 +123,9 @@ func makeTest() {
 func slicesOfSlices() {
 	fmt.Printf("\n\nslices of slices test\n")
 	board := [][]string{
-		[]string{"_", "_", "_"},
-		[]string{"_", "_", "_"},
-		[]string{"_", "_", "_"},
+		{"_", "_", "_"},
+		{"_", "_", "_"},
+		{"_", "_", "_"},
 	}
 
 	// The players take turns.
