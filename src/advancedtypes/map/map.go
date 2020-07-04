@@ -2,11 +2,16 @@ package main
 
 import "fmt"
 
+/*Vertex is a vertex*/
 type Vertex struct {
 	Lat, Long float64
 }
 
 var m map[string]Vertex
+
+func updateMap(m map[string]string, key, value string) {
+	m[key] = value
+}
 
 func main() {
 	m = make(map[string]Vertex)
@@ -18,6 +23,21 @@ func main() {
 
 	mapLiteralsTest()
 	mutatingMaps()
+
+	place := make(map[string]string)
+
+	place["name"] = "Paris"
+	updateMap(place, "country", "France")
+
+	fmt.Println(place)
+
+	var place2 = map[string]string{
+		"name": "Berlin",
+	}
+
+	updateMap(place2, "country", "Germany")
+
+	fmt.Println(place2)
 }
 
 func mapLiteralsTest() {
