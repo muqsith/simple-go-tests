@@ -11,14 +11,17 @@ func main() {
 
 	s1 := [5]int{2, 4, 5}
 	s2 := s1
+	s3 := s2[:] // if you slice it's always a pointer to array
 
 	fmt.Println(s1[0:5])
 	fmt.Println(s2[0:5])
+	fmt.Println(s3[0:5])
 
 	s2[4] = 100
 
 	fmt.Println(s1[0:5])
 	fmt.Println(s2[0:5])
+	fmt.Println(s3[0:5])
 
 	var a [2]string
 	a[0] = "muqsith"
