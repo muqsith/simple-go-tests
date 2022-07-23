@@ -9,5 +9,7 @@ import (
 func main() {
 	// rand.Seed(42)
 	rand.Seed(time.Now().UnixNano())
-	fmt.Println("My favorite number is", rand.Intn(500))
+	for i := 0; i < 10; i++ {
+		fmt.Println("My favorite number is", rand.Intn(500))
+	}
 }
