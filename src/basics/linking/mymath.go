@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"./more"
+	"muqsith/simple-go-tests/src/basics/linking/more"
 )
 
 /*
