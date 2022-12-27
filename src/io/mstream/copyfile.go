@@ -1,4 +1,4 @@
-package main
+package mstream
 
 import (
 	"bufio"
@@ -6,7 +6,7 @@ import (
 	"os"
 )
 
-func CopyFiles() {
+func CopyFiles() int {
 	inFile := "/home/muqsith/Development/simple-go-tests/tmp/files.zip"
 
 	outFile := "/home/muqsith/Development/simple-go-tests/tmp/out.zip"
@@ -34,4 +34,5 @@ func CopyFiles() {
 		fileWriter.Write(buf[0:nread])
 		nread, err = bufferedReader.Read(buf)
 	}
+	return 0
 }

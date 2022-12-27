@@ -1,4 +1,4 @@
-package main
+package mstream
 
 import (
 	"log"
@@ -7,7 +7,7 @@ import (
 	"github.com/minio/minio-go/v7/pkg/credentials"
 )
 
-func MinioTest() {
+func MinioTest() int {
 	endpoint := "localhost:9000"
 	accessKeyID := "ROOTNAME"
 	secretAccessKey := "CHANGEME123"
@@ -23,4 +23,5 @@ func MinioTest() {
 	}
 
 	log.Printf("%#v\n", minioClient) // minioClient is now set up
+	return 0
 }
