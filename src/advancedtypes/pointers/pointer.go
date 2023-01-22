@@ -15,6 +15,14 @@ func (c *Circle) calculateArea() {
 	c.area = math.Pi * c.radius * c.radius
 }
 
+func test1(v *int) {
+	fmt.Println("&v: ", v, ", *v: ", *v)
+}
+
+func test2(cv *Circle) {
+	fmt.Println("&cv: ", cv, ", *cv: ", *cv)
+}
+
 func main() {
 	var i int = 42
 	var p *int = &i
@@ -46,4 +54,12 @@ func main() {
 	pa = &j
 
 	fmt.Println("adress pa referring to: ", pa)
+
+	// ------------
+	v := 4
+	test1(&v)
+
+	cv := Circle{radius: 9}
+	cv.calculateArea()
+	test2(&cv)
 }
