@@ -42,6 +42,11 @@ func main() {
 	updateMap(place2, "country", "Germany")
 
 	fmt.Println(place2)
+
+	var nilMap map[string]interface{}
+	for k, v := range nilMap {
+		fmt.Println("k: ", k, ", v: ", v)
+	}
 }
 
 func mapLiteralsTest() {
