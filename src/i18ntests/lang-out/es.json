@@ -1,0 +1,14 @@
+{
+  "HelloWorld": {
+    "description": "Test message",
+    "defaultMessage": "Hola Mundo"
+  },
+  "OneMessage": {
+    "description": "Person has a message",
+    "defaultMessage": "{{.Name}} tiene {{.Count}} mensaje."
+  },
+  "MoreMessages": {
+    "description": "The number of messages a person has",
+    "defaultMessage": "{{.Name}} tiene {{.Count}} mensajes."
+  }
+}

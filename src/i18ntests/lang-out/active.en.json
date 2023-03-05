@@ -1,0 +1,19 @@
+{
+  "HelloWorld": {
+    "description": "A simple text",
+    "other": "Hello World!"
+  },
+  "PersonCats": {
+    "description": "Just about cats",
+    "one": "{{.Name}} has {{.Count}} cat.",
+    "other": "{{.Name}} has {{.Count}} cats."
+  },
+  "PersonCats_1-cat": {
+    "description": "Just about a cat",
+    "other": "{{.Name}} has {{.Count}} cat."
+  },
+  "PersonCats_plural-more-cats": {
+    "description": "Just about more cats",
+    "other": "{{.Name}} has {{.Count}} cats."
+  }
+}
