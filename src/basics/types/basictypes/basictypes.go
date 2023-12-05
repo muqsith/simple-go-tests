@@ -13,6 +13,19 @@ var (
 	z             = cmplx.Sqrt(-5 + 12i)
 )
 
+func typeSwitchTest(i interface{}) {
+	switch v := i.(type) {
+	case int:
+		fmt.Printf("Type of i is %T \n", v)
+	case string:
+		fmt.Printf("Type of i is %T \n", v)
+	case bool:
+		fmt.Printf("bool value is %v\n", v)
+	default:
+		fmt.Printf("I don't know about type %T!\n", v)
+	}
+}
+
 func main() {
 	fmt.Printf("Type %T, Value: %v\n", toBe, toBe)
 	fmt.Printf("Type %T, Value: %v\n", maxInt, maxInt)
@@ -49,4 +62,6 @@ func main() {
 	fs1 := strconv.FormatFloat(f1, 'f', 2, 64)
 
 	fmt.Println(fs1)
+
+	typeSwitchTest(21)
 }
